@@ -532,8 +532,9 @@
                     </div>
                 </div>
                 <div class="mt-3.5 pt-2.5 border-t border-rose-100 flex items-center justify-between text-xs text-slate-600">
-                    <span>Pastoreo Sabana: <strong id="kpiSabanaPct" class="font-mono-num text-rose-700">75.0%</strong></span>
-                    <span>Parásitos: <strong id="kpiParasitosPct" class="font-mono-num text-slate-900">22.3%</strong></span>
+                    <span>Parásitos: <strong id="kpiParasitosPct" class="font-mono-num text-rose-700">22.3%</strong></span>
+                    <span>Diarrea Crías: <strong id="kpiDiarreaPct" class="font-mono-num text-slate-900">10.9%</strong></span>
+                    <span id="kpiSabanaPct" class="hidden">75.0%</span>
                 </div>
             </div>
         </section>
@@ -1803,6 +1804,8 @@
             document.getElementById("kpiSequiaCount").textContent = `(${seqCount} UP)`;
             document.getElementById("kpiSabanaPct").textContent = sabanaPctStr;
             document.getElementById("kpiParasitosPct").textContent = parPctStr;
+            const kpiDiaEl = document.getElementById("kpiDiarreaPct");
+            if (kpiDiaEl) kpiDiaEl.textContent = diaPctStr;
 
             // Update Chart Footnotes & Strategic Tab metrics
             document.getElementById("noteSabanaPct").textContent = sabanaPctStr;
